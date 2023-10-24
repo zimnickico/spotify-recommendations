@@ -4,6 +4,7 @@ import { Spotify } from "../consts";
 export default function SearchInput({
     setSearchOpen,
     setSearchResults,
+    setSearchFocused,
 }: any) {
 
     async function handleChange(searchparams: string) {
@@ -27,8 +28,9 @@ export default function SearchInput({
 
   return (
     <input
-      placeholder="Searach for songs"
-      className="rounded-xl placeholder:text-gray-300 text-sm pl-2 grow focus:ring-0 focus:outline-0"
+      onFocus={() => setSearchFocused(true)}
+      placeholder="Search songs"
+      className="z-30 relative rounded-full focus:placeholder:text-black/0 placeholder:text-black text-lg bg-white/0 font-normal pl-4 grow focus:ring-0 focus:outline-0"
       onChange={(e) => handleChange(e.target.value)}
     ></input>
   );

@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 export default function SearchList({
   searchOpen,
@@ -9,7 +10,6 @@ export default function SearchList({
   setRecommendationParams,
   recommendationParams,
 }: any) {
-
   async function handleSet(track: any) {
     const tracksArray = [
       { id: track.id, name: track.name, cover: track.cover },
@@ -37,20 +37,33 @@ export default function SearchList({
   }
 
   return searchOpen ? (
-    <div className="border-[1px] overflow-hidden bg-white rounded-xl absolute mt-2 text-sm flex flex-col">
+    <motion.div className="z-20 transition-all pt-10 pb-2 px-2 -mt-9 z-10 overflow-hidden border-[1px] bg-gray-100/40 w-[60vw] backdrop-blur rounded-xl rounded-b-3xl absolute text-md flex flex-col">
       {searchResults.map((item: any) => (
         <button
           key={item.id}
           onClick={(e) => handleSet(item)}
-          className="hover:bg-gray-50 flex w-[40vw] items-center p-2"
+          className="hover:bg-gray-100 rounded-2xl flex flex-row items-center p-2"
         >
-          <img className="w-12 h-12 rounded-lg" src={item.cover}></img>
-          <div className="flex flex-col items-start pl-2 overflow-hidden">
+          <img className="w-20 h-20 rounded-xl" src={item.cover}></img>
+          <div className="flex flex-col items-start pl-4 overflow-hidden grow">
             <ul className="overflow-hidden text-left truncate">{item.name}</ul>
-            <ul>{item.artist}</ul>
+            <ul className="text-gray-500">{item.artist}</ul>
           </div>
+          <button className="grow flex justify-end pr-4">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 256 256"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill="#000000"
+                d="M228 128a12 12 0 0 1-12 12h-76v76a12 12 0 0 1-24 0v-76H40a12 12 0 0 1 0-24h76V40a12 12 0 0 1 24 0v76h76a12 12 0 0 1 12 12Z"
+              />
+            </svg>
+          </button>
         </button>
       ))}
-    </div>
+    </motion.div>
   ) : null;
 }

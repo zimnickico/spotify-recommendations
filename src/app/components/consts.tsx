@@ -10,6 +10,10 @@ export const DefaultRecommendationParams = {
   seed_genres: ["pop"],
 };
 
+export const colors = ([
+  "bg-red-400",
+])
+
 export const Generes = ([
   "acoustic",
   "afrobeat",

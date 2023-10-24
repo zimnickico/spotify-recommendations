@@ -22,12 +22,12 @@ export default function TracksList({
   }
 
   return (
-    <div className="flex gap-2 flex-wrap max-w-[40vw] mb-4 mt-2">
+    <div className="z-10 relative flex gap-2 flex-wrap max-w-[60vw] mb-4 mt-2">
       {currentTrack
         ? currentTrack?.map((track: any) => (
             <div
               key={track.id}
-              className="rounded-xl border-[1px] w-fit p-1 text-sm flex items-center bg-gray-100"
+              className="rounded-xl border-[1px] w-fit p-1 text-md flex items-center bg-gray-100"
             >
               <img className="w-8 h-8 rounded-lg mr-2" src={track.cover}></img>
               <p>{track.name}</p>

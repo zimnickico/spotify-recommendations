@@ -42,10 +42,12 @@ export default function GetRecommendationsBtn({
 
   return (
     <button
-      className="gap-2 bg-gray-50 border-[1px] rounded-lg px-2 text-left h-8 mr-1 items-center flex p-0"
+      className="gap-2 z-20 rounded-3xl pl-1 text-left h-12 w-fit mr-1 items-center flex pl-4 pr-4 hover:bg-gray-100"
       onClick={hanldeGetRecommendation}
     >
       <svg
+        strokeWidth={0.4}
+        stroke="#000000"
         className="m-auto"
         width="20"
         height="20"
@@ -53,11 +55,11 @@ export default function GetRecommendationsBtn({
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          fill="#00000"
+          fill="#000000"
           d="M20 4v9a4 4 0 0 1-4 4H6.914l2.5 2.5L8 20.914L3.086 16L8 11.086L9.414 12.5l-2.5 2.5H16a2 2 0 0 0 2-2V4h2Z"
         />
       </svg>
-      <p className="w-max">Find Recommendations</p>
+      <p className="font-medium">Get Recommendations</p>
     </button>
   );
 }
