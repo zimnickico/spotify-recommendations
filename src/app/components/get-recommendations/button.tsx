@@ -16,7 +16,7 @@ export default function GetRecommendationsBtn({
       }, "");
 
       const recommendationParamsConst = {
-        limit: 4,
+        limit: 10,
         seed_tracks: [trackIdsString],
       };
 
