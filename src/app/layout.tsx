@@ -1,6 +1,7 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Manrope } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/react';
 
 const inter = Manrope({ subsets: ['latin'] })
 
@@ -15,6 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <Analytics/>
       <body className={inter.className}>{children}</body>
     </html>
   )
