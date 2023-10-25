@@ -17,7 +17,7 @@ export default function Search({
       {!searchFocused ? (
         <motion.div
           layoutId="search"
-          className="z-30 relative mt-[-170px] border-[1px] bg-gray-100/40 backdrop-blur rounded-full h-14 w-[60vw] flex items-center"
+          className="z-30 relative lg:mt-[-170px] mt-0 border-[1px] bg-gray-100/40 backdrop-blur rounded-full h-14 lg:w-[60vw] w-[95vw] flex items-center"
         >
           <SearchInput
             setSearchOpen={setSearchOpen}

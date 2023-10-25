@@ -42,7 +42,7 @@ export default function GetRecommendationsBtn({
 
   return (
     <button
-      className="gap-2 z-20 rounded-3xl pl-1 text-left h-12 w-fit mr-1 items-center flex pl-4 pr-4 hover:bg-gray-100"
+      className="gap-2 z-20 rounded-3xl pl-1 text-left h-12 lg:w-fit w-max mr-1 items-center flex pl-4 pr-4 hover:bg-gray-100"
       onClick={hanldeGetRecommendation}
     >
       <svg

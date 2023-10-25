@@ -31,7 +31,7 @@ export default function App() {
   ) as any;
 
   return (
-    <main className="flex flex-col m-auto">
+    <main className="flex flex-col m-auto overflow-hidden">
       {/*<Navigation />*/}
       {searchFocused ? (
         <div className="opacity-0 z-10 absolute">
@@ -42,7 +42,7 @@ export default function App() {
           <Landing />
         </div>
       )}
-      <div className="m-auto mt-32">
+      <div className="m-auto mt-32 max-w-none">
         <Search
           searchOpen={searchOpen}
           searchFocused={searchFocused}
@@ -52,6 +52,25 @@ export default function App() {
           setRecommendations={setRecommendations}
           currentTrack={currentTrack}
         ></Search>
+        {!searchFocused ? (
+          <div
+          className="mt-12 float-right">
+            <a
+              
+              href="https://www.producthunt.com/posts/rects-for-spotify?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-rects&#0045;for&#0045;spotify"
+              target="_blank"
+            >
+              <img
+                className="transition-all"
+                src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=421792&theme=dark"
+                alt="Rects&#0032;for&#0032;Spotify - Get&#0032;tailored&#0032;listening&#0032;recommendations&#0046; | Product Hunt"
+                style={{ width: 250, height: 54 }}
+                width="250"
+                height="54"
+              />
+            </a>
+          </div>
+        ) : null}
         <SearchList
           searchOpen={searchOpen}
           searchResults={searchResults}
