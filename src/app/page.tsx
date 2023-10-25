@@ -32,7 +32,7 @@ export default function App() {
 
   return (
     <main className="flex flex-col m-auto">
-      <Navigation />
+      {/*<Navigation />*/}
       {searchFocused ? (
         <div className="opacity-0 z-10 absolute">
           <Landing />
