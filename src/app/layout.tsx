@@ -16,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="m-0 p-0 h-[90vh] overflow-hidden">
-      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, shrink-to-fit=no"/>
       <Analytics/>
       <body className={inter.className + " m-0 p-0 h-[90vh] overflow-hidden"}>{children}</body>
     </html>
