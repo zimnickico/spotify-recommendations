@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Spotify, varsMobile, varsDesktop } from "../consts";
 import { SearchResults } from "./results";
 import { SearchButton } from "./button";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, transform } from "framer-motion";
 
 export function SearchForm() {
   const [searching, setSearching] = useState(false);
@@ -64,6 +64,7 @@ export function SearchForm() {
             placeholder="Start searching..."
             onChange={(e) => handleSearching(e.target.value)}
             onFocus={() => setInputFocused(true)}
+            onTouchStartCapture={() => setInputFocused(true)}
           ></input>
           <SearchButton />
         </form>
