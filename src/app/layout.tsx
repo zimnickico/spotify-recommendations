@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="m-0 p-0 h-[90vh] overflow-hidden">
       <Analytics/>
-      <body className={inter.className + " m-0 p-0 h-[90vh] overflow-hidden"}>{children}</body>
+      <body className={inter.className + " m-0 p-0 h-[90vh] overflow-hidden fixed"}>{children}</body>
     </html>
   )
 }
