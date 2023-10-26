@@ -1,6 +1,4 @@
-'use client'
-
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Spotify, varsMobile, varsDesktop } from "../consts";
 import { SearchResults } from "./results";
 import { SearchButton } from "./button";
@@ -44,7 +42,9 @@ export function SearchForm() {
     }
   }
 
+  useEffect(() => {
   const isMobile = window.innerWidth <= 768; // adjust this value as needed
+  },[]);
 
   return (
     <AnimatePresence>
