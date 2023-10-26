@@ -33,7 +33,7 @@ export default function Search({
       ) : searchOpen ? (
         <motion.div
           layoutId="search"
-          className="z-30 relative h-14 w-[60vw] bg-gray-50 border-y-[1px] border-x-[1px] rounded-t-3xl backdrop-blur flex items-center"
+          className="z-30 relative h-14 lg:w-[60vw] w-[95vw] bg-gray-50 border-y-[1px] border-x-[1px] rounded-t-3xl backdrop-blur flex items-center"
         >
           <SearchInput
             setSearchOpen={setSearchOpen}
@@ -49,7 +49,7 @@ export default function Search({
       ) : (
         <motion.div
           layoutId="search"
-          className="z-30 relative rounded-full h-14 w-[60vw] border-[1px] bg-gray-100/50 backdrop-blur flex items-center"
+          className="z-30 relative rounded-full h-14 lg:w-[60vw] w-[95vw] border-[1px] bg-gray-100/50 backdrop-blur flex items-center"
         >
           <SearchInput
             setSearchOpen={setSearchOpen}

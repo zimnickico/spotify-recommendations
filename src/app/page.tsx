@@ -31,18 +31,15 @@ export default function App() {
   ) as any;
 
   return (
-    <main className="flex flex-col m-auto overflow-hidden">
+    <main className="flex flex-col m-auto md:overflow-visible overflow-hidden">
       {/*<Navigation />*/}
-      {searchFocused ? (
-        <div className="opacity-0 z-10 absolute">
-          <Landing />
-        </div>
+      {searchFocused ? ( null
       ) : (
-        <div className="opacity-100  m-auto flex flex-col">
+        <div className="opacity-100 relative m-auto flex flex-col z-10">
           <Landing />
         </div>
       )}
-      <div className="m-auto mt-32 max-w-none">
+      <div className="z-30 lg:h-auto h-[100vh]  relative m-auto mt-32 max-w-none">
         <Search
           searchOpen={searchOpen}
           searchFocused={searchFocused}

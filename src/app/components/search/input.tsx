@@ -30,7 +30,7 @@ export default function SearchInput({
     <input
       onFocus={() => setSearchFocused(true)}
       placeholder="Search songs"
-      className="z-30 relative rounded-full focus:placeholder:text-black/0 placeholder:text-black text-lg bg-white/0 font-normal pl-4 lg:grow focus:ring-0 focus:outline-0"
+      className="z-30 relative grow rounded-full focus:placeholder:text-black/0 placeholder:text-black md:text-lg bg-white/0 font-normal pl-4 lg:grow focus:ring-0 focus:outline-0"
       onChange={(e) => handleChange(e.target.value)}
     ></input>
   );

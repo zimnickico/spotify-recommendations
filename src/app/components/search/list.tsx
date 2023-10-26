@@ -37,7 +37,7 @@ export default function SearchList({
   }
 
   return searchOpen ? (
-    <motion.div className="z-20 transition-all pt-10 pb-2 px-2 -mt-9 z-10 overflow-hidden border-[1px] bg-gray-100/40 w-[60vw] backdrop-blur rounded-xl rounded-b-3xl absolute text-md flex flex-col">
+    <motion.div className="z-20 transition-all pt-10 pb-2 px-2 -mt-9 z-10 overflow-hidden border-[1px] bg-gray-100/40 lg:w-[60vw] w-[95vw] backdrop-blur rounded-xl rounded-b-3xl absolute text-md flex flex-col">
       {searchResults.map((item: any) => (
         <button
           key={item.id}
