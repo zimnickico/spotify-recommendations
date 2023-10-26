@@ -51,7 +51,6 @@ export function SearchForm() {
   },[]);
 
   return (
-    <AnimatePresence>
       <motion.div
         initial={inputFocused ? "hidden" : "show"}
         animate={inputFocused ? "show" : "hidden"}
@@ -70,6 +69,5 @@ export function SearchForm() {
         </form>
         <SearchResults searchResults={searchResults} />
       </motion.div>
-    </AnimatePresence>
   );
 }
