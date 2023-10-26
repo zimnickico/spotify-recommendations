@@ -10,6 +10,7 @@ import SearchList from "./components/search/list";
 import Search from "./components/search";
 import Landing from "./components/landing";
 import Navigation from "./components/navbar/navigation";
+import { SearchForm } from "./components/search-form";
 
 // Required Params:
 // Track Features:
@@ -31,8 +32,9 @@ export default function App() {
   ) as any;
 
   return (
-    <main className="flex flex-col m-auto md:overflow-visible overflow-hidden">
-      {/*<Navigation />*/}
+    <main className="flex flex-col m-auto overflow-hidden">
+      <SearchForm/>
+      {/*<Navigation />
       {searchFocused ? ( null
       ) : (
         <div className="opacity-100 relative m-auto flex flex-col z-10">
@@ -83,7 +85,7 @@ export default function App() {
           setRecommendations={setRecommendations}
         />
       </div>
-      <SeeRecommendationsList recommendations={recommendations} />
+      <SeeRecommendationsList recommendations={recommendations} />*/}
     </main>
   );
 }

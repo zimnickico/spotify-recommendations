@@ -14,6 +14,18 @@ export const colors = ([
   "bg-red-400",
 ])
 
+export const varsMobile = {
+  hidden: { y: "90vh" },
+  show: { y: "0", transition: { duration: 0.65, ease: "easeIn" } },
+  exit: { y: "90vh", transition: { duration: 1, ease: "easeOut" } },
+};
+
+export const varsDesktop = {
+  hidden: { y: "80vh" },
+  show: { y: "80vh" },
+  exit: { y: "80vh" },
+};
+
 export const Generes = ([
   "acoustic",
   "afrobeat",
