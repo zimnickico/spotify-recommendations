@@ -11,6 +11,8 @@ export function SearchForm() {
   const [searchResults, setSearchResults] = useState(new Array());
   const [noResults, setNoResults] = useState(false);
 
+  const [isMobile, setMobile] = useState(false);
+
   async function handleSearching(searchparams: string) {
     try {
       if (!searchparams) {
@@ -43,7 +45,9 @@ export function SearchForm() {
   }
 
   useEffect(() => {
-  const isMobile = window.innerWidth <= 768; // adjust this value as needed
+  if (window.innerWidth <= 768) {
+    setMobile(true)
+  }
   },[]);
 
   return (
