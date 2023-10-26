@@ -63,8 +63,8 @@ export function SearchForm() {
             className="z-30 relative rounded grow focus:ring-0 focus:outline-0"
             placeholder="Start searching..."
             onChange={(e) => handleSearching(e.target.value)}
+            autoFocus={false}
             onFocus={(e) => {
-                window.scrollTo(0, 0);
                 e.preventDefault();
                 setInputFocused(true);
               }}
