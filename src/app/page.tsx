@@ -32,7 +32,7 @@ export default function App() {
   ) as any;
 
   return (
-    <main className="flex flex-col m-auto overflow-hidden">
+    <main className="flex flex-col m-auto overflow-hidden max-h-[100vh]">
       <SearchForm/>
       {/*<Navigation />
       {searchFocused ? ( null
