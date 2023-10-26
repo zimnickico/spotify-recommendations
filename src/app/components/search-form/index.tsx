@@ -1,5 +1,7 @@
+'use client'
+
 import { useState } from "react";
-import { Spotify } from "../consts";
+import { Spotify, varsMobile, varsDesktop } from "../consts";
 import { SearchResults } from "./results";
 import { SearchButton } from "./button";
 import { AnimatePresence, motion } from "framer-motion";
@@ -41,18 +43,6 @@ export function SearchForm() {
       setNoResults(true);
     }
   }
-
-  const varsMobile = {
-    hidden: { y: "90vh" },
-    show: { y: "0", transition: { duration: 0.75, ease: "easeIn" } },
-    exit: { y: "90vh", transition: { duration: 1, ease: "easeOut" } },
-  };
-
-  const varsDesktop = {
-    hidden: { y: "80vh" },
-    show: { y: "80vh" },
-    exit: { y: "80vh" },
-  };
 
   const isMobile = window.innerWidth <= 768; // adjust this value as needed
 
