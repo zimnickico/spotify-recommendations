@@ -15,9 +15,9 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className="m-0 p-0 h-[100vh]">
       <Analytics/>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className + " m-0 p-0"}>{children}</body>
     </html>
   )
 }
