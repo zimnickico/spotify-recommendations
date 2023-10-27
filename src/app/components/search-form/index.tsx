@@ -65,6 +65,7 @@ export function SearchForm() {
           onChange={(e) => handleSearching(e.target.value)}
           autoFocus={false}
           onTouchStart={(e) => {
+            e.preventDefault()
             setInputFocused(true);
             window.scrollTo(0, 0);
           }}
