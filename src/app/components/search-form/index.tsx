@@ -64,10 +64,13 @@ export function SearchForm() {
           placeholder="Start searching..."
           onChange={(e) => handleSearching(e.target.value)}
           autoFocus={false}
+          onTouchStart={(e) => {
+            setInputFocused(true);
+            window.scrollTo(0, 0);
+          }}
           onFocus={(e) => {
             setInputFocused(true);
-            e.preventDefault();
-            e.stopPropagation()
+            window.scrollTo(0, 0);
           }}
         ></input>
         <SearchButton />
