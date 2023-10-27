@@ -15,10 +15,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="m-0 p-0 h-[90vh] overflow-hidden">
+    <html lang="en" className="m-0 p-0 h-[100vh] overflow-hidden">
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, shrink-to-fit=no"/>
       <Analytics/>
-      <body className={inter.className + " m-0 p-0 h-[90vh] overflow-hidden"}>{children}</body>
+      <body className={inter.className + " m-0 p-0 h-[100vh] overflow-hidden"}>{children}</body>
     </html>
   )
 }

@@ -56,7 +56,7 @@ export function SearchForm() {
         animate={inputFocused ? "show" : "hidden"}
         exit="exit"
         variants={isMobile ? varsMobile : varsDesktop}
-        className="z-30 relative lg:mx-32 mt-4 mx-4 h-[100vh] overflow-hidden"
+        className="z-30 relative lg:mx-32 mt-4 mx-4 h-[100%] fixed overflow-hidden"
       >
         <form className="z-30 relative px-4 py-3 items-end rounded-full border-[1px] flex h-12">
           <input
