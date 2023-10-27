@@ -68,7 +68,7 @@ export function SearchForm() {
             setInputFocused(true);
             window.scrollTo(0, 0);
           }}
-          onFocus={(e) => {
+          onClick={(e) => {
             setInputFocused(true);
             window.scrollTo(0, 0);
           }}
