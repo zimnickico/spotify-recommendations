@@ -45,33 +45,34 @@ export function SearchForm() {
   }
 
   useEffect(() => {
-  if (window.innerWidth <= 768) {
-    setMobile(true)
-  }
-  },[]);
+    if (window.innerWidth <= 768) {
+      setMobile(true);
+    }
+  }, []);
 
   return (
-      <motion.div
-        initial={inputFocused ? "hidden" : "show"}
-        animate={inputFocused ? "show" : "hidden"}
-        exit="exit"
-        variants={isMobile ? varsMobile : varsDesktop}
-        className="z-30 relative lg:mx-32 mt-4 mx-4 overflow-hidden"
-      >
-        <form className="z-30 relative px-4 py-3 items-end rounded-full border-[1px] flex h-12">
-          <input
-            className="z-30 relative rounded grow focus:ring-0 focus:outline-0"
-            placeholder="Start searching..."
-            onChange={(e) => handleSearching(e.target.value)}
-            autoFocus={false}
-            onFocus={(e) => {
-                e.preventDefault();
-                setInputFocused(true);
-              }}
-          ></input>
-          <SearchButton />
-        </form>
-        <SearchResults searchResults={searchResults} />
-      </motion.div>
+    <motion.div
+      initial={inputFocused ? "hidden" : "show"}
+      animate={inputFocused ? "show" : "hidden"}
+      exit="exit"
+      variants={isMobile ? varsMobile : varsDesktop}
+      className="z-30 relative lg:mx-32 mt-4 mx-4 overflow-hidden"
+    >
+      <form className="z-30 relative px-4 py-3 items-end rounded-full border-[1px] flex h-12">
+        <input
+          className="z-30 relative rounded grow focus:ring-0 focus:outline-0"
+          placeholder="Start searching..."
+          onChange={(e) => handleSearching(e.target.value)}
+          autoFocus={false}
+          onFocus={(e) => {
+            setInputFocused(true);
+            e.preventDefault();
+            e.stopPropagation()
+          }}
+        ></input>
+        <SearchButton />
+      </form>
+      {inputFocused ? <SearchResults searchResults={searchResults} /> : null}
+    </motion.div>
   );
 }
