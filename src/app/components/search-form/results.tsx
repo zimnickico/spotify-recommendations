@@ -1,7 +1,8 @@
 export function SearchResults(searchResults: any) {
 
     return (
-        <h1>{JSON.stringify(searchResults)}!</h1>
+        <h1
+        className="h-96">{JSON.stringify(searchResults)}!</h1>
     )
 
 }
