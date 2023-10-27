@@ -15,7 +15,7 @@ export const colors = ([
 ])
 
 export const varsMobile = {
-  hidden: { y: "70vh",},
+  hidden: { y: "70vh" },
   show: { y: "0vh", transition: { duration: 0.65, ease: "easeIn" } },
   exit: { y: "90vh", transition: { duration: 1, ease: "easeOut" } },
 };

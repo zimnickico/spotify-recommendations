@@ -47,7 +47,7 @@ export function SearchForm() {
   useEffect(() => {
     if (window.innerWidth <= 768) {
       setMobile(true);
-    }
+    } 
   }, []);
 
   return (
@@ -56,7 +56,7 @@ export function SearchForm() {
       animate={inputFocused ? "show" : "hidden"}
       exit="exit"
       variants={isMobile ? varsMobile : varsDesktop}
-      className="z-30 relative lg:mx-32 mt-4 mx-4 overflow-hidden"
+      className="focus-within:h-full focus-within:bg-white/20 backdrop-blur z-30 lg:mx-32 pt-4 px-4 overflow-hidden"
     >
       <form className="z-30 relative px-4 py-3 items-end rounded-full border-[1px] flex h-12">
         <input
@@ -64,14 +64,8 @@ export function SearchForm() {
           placeholder="Start searching..."
           onChange={(e) => handleSearching(e.target.value)}
           autoFocus={false}
-          onTouchStart={(e) => {
-            e.preventDefault()
+          onFocus={(e) => {
             setInputFocused(true);
-            window.scrollTo(0, 0);
-          }}
-          onClick={(e) => {
-            setInputFocused(true);
-            window.scrollTo(0, 0);
           }}
         ></input>
         <SearchButton />

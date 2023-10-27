@@ -1,16 +1,8 @@
 "use client";
 
 import React from "react";
-import { Spotify } from "./components/consts";
-import GetRecommendationsBtn from "./components/get-recommendations/button";
-import SeeRecommendationsList from "./components/see-recommendations/list";
-import TracksList from "./components/tracks/list";
-import SearchInput from "./components/search/input";
-import SearchList from "./components/search/list";
-import Search from "./components/search";
-import Landing from "./components/landing";
-import Navigation from "./components/navbar/navigation";
 import { SearchForm } from "./components/search-form";
+import { Landing } from "./components/landing-elements";
 
 // Required Params:
 // Track Features:
@@ -32,7 +24,8 @@ export default function App() {
   ) as any;
 
   return (
-    <main className="flex flex-col m-auto h-full">
+    <main className=" flex-col m-auto h-full">
+      <Landing/>
       <SearchForm/>
       {/*<Navigation />
       {searchFocused ? ( null
