@@ -59,7 +59,8 @@ export function SearchForm() {
       className="focus-within:h-full focus-within:bg-white/20 backdrop-blur z-30 lg:mx-32 pt-4 px-4 overflow-hidden"
     >
       {inputFocused ? (
-        <button className="text-lg flex gap-2 items-center mb-4">
+        <button className="text-lg flex gap-2 items-center mb-4"
+        onClick={(e) => setInputFocused(false)}>
           <svg
             width="24"
             height="24"
