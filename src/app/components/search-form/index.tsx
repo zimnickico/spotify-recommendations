@@ -55,6 +55,7 @@ export function SearchForm() {
       initial={inputFocused ? "hidden" : "show"}
       animate={inputFocused ? "show" : "hidden"}
       exit="exit"
+      transition={{ duration: 0.0 }}
       variants={isMobile ? varsMobile : varsDesktop}
       className="focus-within:h-full focus-within:bg-white/20 backdrop-blur z-30 lg:mx-32 pt-4 px-4 overflow-hidden"
     >
