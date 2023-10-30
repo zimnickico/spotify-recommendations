@@ -50,15 +50,8 @@ export function SearchForm() {
     }
   }, []);
 
-  return (
-    <motion.div
-      initial={inputFocused ? "hidden" : "show"}
-      animate={inputFocused ? "show" : "hidden"}
-      exit="exit"
-      transition={{ duration: 0.0 }}
-      variants={isMobile ? varsMobile : varsDesktop}
-      className="focus-within:h-full focus-within:bg-white/20 backdrop-blur z-30 lg:mx-32 pt-4 px-4 overflow-hidden"
-    >
+  return inputFocused ? (
+    <div className="focus-within:h-full focus-within:bg-white/20 backdrop-blur z-30 lg:mx-32 pt-4 px-4 overflow-hidden">
       {inputFocused ? (
         <BackButton
           setInputFocused={setInputFocused}
@@ -78,6 +71,28 @@ export function SearchForm() {
         <SearchButton />
       </form>
       {inputFocused ? <SearchResults searchResults={searchResults} /> : null}
-    </motion.div>
+    </div>
+  ) : (
+    <div className="z-30 lg:mx-32 mt-[70vh] px-4 overflow-hidden">
+      {inputFocused ? (
+        <BackButton
+          setInputFocused={setInputFocused}
+          inputFocused={inputFocused}
+        />
+      ) : null}
+      <form className="z-30 relative px-4 py-3 items-end rounded-full border-[1px] flex h-12">
+        <input
+          className="z-30 relative rounded grow focus:ring-0 focus:outline-0"
+          placeholder="Start searching..."
+          onChange={(e) => handleSearching(e.target.value)}
+          autoFocus={false}
+          onFocus={(e) => {
+            setInputFocused(true);
+          }}
+        ></input>
+        <SearchButton />
+      </form>
+      {inputFocused ? <SearchResults searchResults={searchResults} /> : null}
+    </div>
   );
 }
