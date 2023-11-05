@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Spotify, varsMobile, varsDesktop } from "../consts";
 import { SearchResults } from "./results";
 import { BackButton, SearchButton } from "./buttons";
-import { AnimatePresence, motion, transform } from "framer-motion";
+import { motion } from "framer-motion";
 
 export function SearchForm() {
   const [searching, setSearching] = useState(false);
@@ -50,49 +50,70 @@ export function SearchForm() {
     }
   }, []);
 
-  return inputFocused ? (
-    <div className="focus-within:h-full focus-within:bg-white/20 backdrop-blur z-30 lg:mx-32 pt-4 px-4 overflow-hidden">
+  return (
+    <div className="fixed w-[100%] h-[100%] z-30 bottom-0 p-[10px]">
       {inputFocused ? (
-        <BackButton
-          setInputFocused={setInputFocused}
-          inputFocused={inputFocused}
-        />
-      ) : null}
-      <form className="z-30 relative px-4 py-3 items-end rounded-full border-[1px] flex h-12">
-        <input
-          className="z-30 relative rounded grow focus:ring-0 focus:outline-0"
-          placeholder="Start searching..."
-          onChange={(e) => handleSearching(e.target.value)}
-          autoFocus={false}
-          onFocus={(e) => {
-            setInputFocused(true);
-          }}
-        ></input>
-        <SearchButton />
-      </form>
-      {inputFocused ? <SearchResults searchResults={searchResults} /> : null}
-    </div>
-  ) : (
-    <div className="z-30 lg:mx-32 mt-[70vh] px-4 overflow-hidden">
-      {inputFocused ? (
-        <BackButton
-          setInputFocused={setInputFocused}
-          inputFocused={inputFocused}
-        />
-      ) : null}
-      <form className="z-30 relative px-4 py-3 items-end rounded-full border-[1px] flex h-12">
-        <input
-          className="z-30 relative rounded grow focus:ring-0 focus:outline-0"
-          placeholder="Start searching..."
-          onChange={(e) => handleSearching(e.target.value)}
-          autoFocus={false}
-          onFocus={(e) => {
-            setInputFocused(true);
-          }}
-        ></input>
-        <SearchButton />
-      </form>
-      {inputFocused ? <SearchResults searchResults={searchResults} /> : null}
+        <motion.div
+          id="form"
+          className="h-[100%] z-30 bg-white translate-y-[36vh] transition-all focus-within:h-full backdrop-blur z-30 lg:mx-32 pt-4 px-4 overflow-hidden"
+        >
+          {inputFocused ? (
+            <BackButton
+              setInputFocused={setInputFocused}
+              inputFocused={inputFocused}
+            />
+          ) : null}
+          <form className="z-30 bg-white relative px-4 py-3 items-end rounded-full border-[1px] flex h-12">
+            <input
+              className="z-30 relative rounded grow focus:ring-0 focus:outline-0"
+              placeholder="Start searching..."
+              onChange={(e) => {
+                handleSearching(e.target.value);
+              }}
+              onFocus={(e) => {
+                setInputFocused(true);
+              }}
+              onBlur={(e) => {
+                isMobile
+                  ? (document
+                      .getElementById("form")
+                      ?.classList.add("translate-y-[0vh]"),
+                    document
+                      .getElementById("form")
+                      ?.classList.remove("translate-y-[36vh]"))
+                  : null;
+              }}
+            ></input>
+            <SearchButton />
+          </form>
+          {inputFocused ? (
+            <SearchResults searchResults={searchResults} />
+          ) : null}
+        </motion.div>
+      ) : (
+        <motion.div className="relative h-[100%] z-30 bg-white translate-y-[60vh] transition-all z-30 lg:mx-32 px-4 overflow-hidden">
+          {inputFocused ? (
+            <BackButton
+              setInputFocused={setInputFocused}
+              inputFocused={inputFocused}
+            />
+          ) : null}
+          <form className="bg-white z-30 relative px-4 py-3 items-end rounded-full border-[1px] flex h-12">
+            <input
+              className="z-30 relative rounded grow focus:ring-0 focus:outline-0"
+              placeholder="Start searching..."
+              onChange={(e) => handleSearching(e.target.value)}
+              onFocus={(e) => {
+                setInputFocused(true);
+              }}
+            ></input>
+            <SearchButton />
+          </form>
+          {inputFocused ? (
+            <SearchResults searchResults={searchResults} />
+          ) : null}
+        </motion.div>
+      )}{" "}
     </div>
   );
 }
