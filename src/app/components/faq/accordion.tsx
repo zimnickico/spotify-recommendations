@@ -17,7 +17,7 @@ export function AccordionFAQ() {
           className="text-sm md:text-md lg:text-lg font-[500]">Is using this app safe?</AccordionTrigger>
           <AccordionContent
           className="text-sm md:text-md lg:text-lg">
-            Yes! We don't ask you to log-in to your Spotify account, so all your data is safe, moreover, anything you recieve as recommendations is not seen by us, as it's sent directly from the Spotify API to you.
+            Yes! We don{`'`}t ask you to log-in to your Spotify account, so all your data is safe, moreover, anything you recieve as recommendations is not seen by us, as it{`'`}s sent directly from the Spotify API to you.
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-2">
