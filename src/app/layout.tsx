@@ -16,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={manrope.className + ' overflow-hidden'}>{children}</body>
+      <body className={manrope.className + ' overflow-y-hidden'}>{children}</body>
     </html>
   )
 }
