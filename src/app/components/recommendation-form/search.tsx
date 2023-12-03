@@ -46,13 +46,13 @@ export function Search() {
   return (
     <div className="m-auto w-[80vw]">
       <input
-        className="w-full border-[1px] px-2 py-2 rounded-lg placeholder:font-[300] text-sm"
+        className="w-full border-[1px] px-2 py-2 rounded-lg placeholder:font-[300] text-sm lg:text-sm"
         onChange={(event) => fetchSearch(event.target.value)}
         onFocus={() => setSearchOpen(true)}
         placeholder="Search for songs..."
       ></input>
       {searchOpen ? (
-        <ul className="max-w-xl flex flex-col gap-2 border-[1px] rounded-lg mt-3">
+        <ul className="max-w-xl absolute w-full z-20 bg-white flex flex-col gap-2 border-[1px] rounded-lg mt-3">
           {searchResults?.map((item: any) => (
             <button
               key={item.id}
